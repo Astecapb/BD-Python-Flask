@@ -7,7 +7,7 @@ DB_CONFIG = {
     "host":     "localhost",
     "port":     5432,
     "user":     "postgres",
-    "password": "admin",          # troque se tiver acento
+    "password": "post1234",          # troque se tiver acento
     "dbname":   "dbpos",
     "client_encoding": "utf8"     # força UTF-8
 }

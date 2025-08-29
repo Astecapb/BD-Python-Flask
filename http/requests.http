@@ -1,9 +1,9 @@
 ### Listar todos clientes
-GET http://10.126.33.131:5000/cliente
-
-### Listar todos os países (resumo)
 GET http://127.0.0.1:5000/api/clientes
 
+### Listar todos os produtos
+GET http://127.0.0.1:5000/api/produtos
 
-### Listar todos os países (resumo)
-GET https://servicodados.ibge.gov.br/api/v1/localidades/paises
+
+### Listar todos os vendas
+GET http://127.0.0.1:5000/api/vendas
