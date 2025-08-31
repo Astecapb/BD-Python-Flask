@@ -13,7 +13,7 @@ with app.app_context():
         print("⚠️ É necessário ter clientes e produtos cadastrados antes de inserir vendas.")
     else:
         vendas = []
-        for i in range(20):
+        for i in range(30):
             cliente = random.choice(clientes)
             produto = random.choice(produtos)
             quantidade = random.randint(1, 5)

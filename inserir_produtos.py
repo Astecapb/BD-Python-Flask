@@ -6,26 +6,16 @@ from app import create_app, db
 from app.models.produto import Produto   # ajuste o import se necessário
 
 produtos_seed = [
-    {"nome": "Mouse Gamer RGB",           "preco": 129.90,  "descricao": "Mouse óptico 12.000 DPI, iluminação RGB.", "categoria": "Periféricos"},
-    {"nome": "Teclado Mecânico 60%",      "preco": 299.90,  "descricao": "Switch azul, retroiluminado, compacto.",   "categoria": "Periféricos"},
-    {"nome": "Monitor 27\" 144Hz",        "preco": 1899.00, "descricao": "IPS Full HD 144 Hz, 1 ms, FreeSync.",      "categoria": "Monitores"},
-    {"nome": "Headset Wireless",          "preco": 349.90,  "descricao": "7.1 surround, bateria 30 h, microfone flex.", "categoria": "Áudio"},
-    {"nome": "Webcam Full HD",            "preco": 199.90,  "descricao": "1080p 30 fps, foco automático, plug-and-play.", "categoria": "Periféricos"},
-    {"nome": "Cadeira Gamer",             "preco": 899.00,  "descricao": "Reclinável, apoio lombar, couro sintético.", "categoria": "Móveis"},
-    {"nome": "Mousepad XXL",              "preco": 89.90,   "descricao": "900×400 mm, base antiderrapante, costura reforçada.", "categoria": "Acessórios"},
-    {"nome": "SSD 1TB NVMe",              "preco": 499.90,  "descricao": "Leitura 3.500 MB/s, M.2 2280.",            "categoria": "Armazenamento"},
-    {"nome": "Placa RTX 4060 8GB",        "preco": 2599.00, "descricao": "Ray tracing DLSS 3, HDMI + 3 DP.",         "categoria": "Placas de Vídeo"},
-    {"nome": "Fonte 650W 80+ Gold",       "preco": 399.90,  "descricao": "Modular, 80 Plus Gold, ventilador silencioso.", "categoria": "Componentes"},
-    {"nome": "Memória 16GB DDR4 3200",    "preco": 299.90,  "descricao": "Kit 2×8 GB, dissipador em alumínio.",      "categoria": "Memória"},
-    {"nome": "Processador Ryzen 5 5600",  "preco": 899.00,  "descricao": "6 núcleos 12 threads, 3.5~4.4 GHz.",       "categoria": "Processadores"},
-    {"nome": "Notebook Gamer 15.6\"",     "preco": 4599.00, "descricao": "i7 11800H, RTX 3050, 16 GB RAM, SSD 512 GB.", "categoria": "Notebooks"},
-    {"nome": "Hub USB-C 7 portas",        "preco": 149.90,  "descricao": "USB-A 3.0, HDMI 4K, leitor SD, PD 100 W.", "categoria": "Acessórios"},
-    {"nome": "Controle Xbox Series",      "preco": 299.90,  "descricao": "Wireless, Bluetooth, compatível PC/Android.", "categoria": "Games"},
-    {"nome": "Fone Bluetooth JBL",        "preco": 249.90,  "descricao": "ANC, 40 h bateria, carregamento rápido.",  "categoria": "Áudio"},
-    {"nome": "Roteador Wi-Fi 6",          "preco": 399.90,  "descricao": "AX1800, 4 antenas, app de gerenciamento.", "categoria": "Redes"},
-    {"nome": "Smartwatch Samsung",        "preco": 1299.00, "descricao": "Tela AMOLED, GPS, monitor cardíaco, 5 ATM.", "categoria": "Wearables"},
-    {"nome": "Pen Drive 128GB USB 3.2",   "preco": 69.90,   "descricao": "Leitura 150 MB/s, corpo em metal.",         "categoria": "Armazenamento"},
-    {"nome": "Cabo HDMI 2.1 2m",          "preco": 49.90,   "descricao": "8K 60 Hz, 48 Gbps, trançado de nylon.",    "categoria": "Cabo"},
+    {"nome": "Tablet Android 10\"",       "preco": 1599.00, "descricao": "Octa-core, 6 GB RAM, 128 GB SSD.",         "categoria": "Tablets"},
+    {"nome": "Impressora Multifuncional", "preco": 799.00,  "descricao": "Jato de tinta, Wi-Fi, scanner integrado.", "categoria": "Impressoras"},
+    {"nome": "HD Externo 2TB",            "preco": 399.00,  "descricao": "USB 3.2, portátil, case resistente.",      "categoria": "Armazenamento"},
+    {"nome": "Câmera de Segurança Wi-Fi", "preco": 299.00,  "descricao": "1080p, visão noturna, app mobile.",        "categoria": "Segurança"},
+    {"nome": "Estabilizador 1000VA",      "preco": 349.00,  "descricao": "Proteção contra surtos, 6 tomadas.",       "categoria": "Energia"},
+    {"nome": "Console PlayStation 5",     "preco": 4599.00, "descricao": "SSD ultrarrápido, controle DualSense.",    "categoria": "Games"},
+    {"nome": "Alexa Echo Dot 5ª Gen",     "preco": 349.00,  "descricao": "Assistente virtual com som premium.",      "categoria": "Smart Home"},
+    {"nome": "Cooler para CPU RGB",       "preco": 199.00,  "descricao": "120 mm, heat pipes, compatível Intel/AMD.", "categoria": "Componentes"},
+    {"nome": "Teclado sem fio Logitech",  "preco": 199.90,  "descricao": "Compacto, conexão 2.4 GHz + Bluetooth.",   "categoria": "Periféricos"},
+    {"nome": "Cadeira de Escritório",     "preco": 699.00,  "descricao": "Ergonômica, malha respirável, regulagem completa.", "categoria": "Móveis"},
 ]
 
 def seed():

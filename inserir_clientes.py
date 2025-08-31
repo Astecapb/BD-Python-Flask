@@ -13,11 +13,16 @@ DB_CONFIG = {
 }
 
 clientes = [
-    ("Ana Silva",      "ana@email.com",   "12345678901", date(1990, 5, 12)),
-    ("Bruno Costa",    "bruno@email.com", "98765432100", date(1985, 8, 25)),
-    ("Carla Souza",    "carla@email.com", "11122233344", date(1992, 3, 17)),
-    ("Diego Oliveira", "diego@email.com", "55566677788", date(1988, 11, 30)),
-    ("Elaine Martins", "elaine@email.com","99988877766", date(1995, 7, 4))
+    ("Fernando Lima",  "fernando@email.com", "22233344455", date(1991, 1, 22)),
+    ("Gabriela Rocha","gabriela@email.com", "33344455566", date(1994, 6, 14)),
+    ("Henrique Alves","henrique@email.com", "44455566677", date(1989, 12, 9)),
+    ("Isabela Torres","isabela@email.com",  "55544433322", date(1997, 4, 2)),
+    ("João Mendes",   "joao@email.com",     "66677788899", date(1983, 7, 15)),
+    ("Karen Dias",    "karen@email.com",    "77788899900", date(1996, 9, 20)),
+    ("Lucas Pereira", "lucas@email.com",    "88899900011", date(1990, 10, 5)),
+    ("Mariana Lopes", "mariana@email.com",  "99900011122", date(1987, 2, 28)),
+    ("Pedro Santos",  "pedro@email.com",    "11100099988", date(1993, 3, 8)),
+    ("Renata Freitas","renata@email.com",   "22211133344", date(1998, 12, 25))
 ]
 
 create_table_sql = """
