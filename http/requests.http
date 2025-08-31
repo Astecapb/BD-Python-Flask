@@ -7,3 +7,6 @@ GET http://127.0.0.1:5000/api/produtos
 
 ### Listar todos os vendas
 GET http://127.0.0.1:5000/api/vendas
+
+###
+curl http://127.0.0.1:5000/api/dashboard

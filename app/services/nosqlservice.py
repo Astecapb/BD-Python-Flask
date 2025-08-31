@@ -1,6 +1,10 @@
-from pymongo import MongoClient
-from config import Config
 from datetime import datetime
+from pymongo import MongoClient
+from sqlalchemy import func
+from config import Config
+from app.models import Cliente, Produto, Venda
+from app import db
+
 
 class NoSQLService:
     def __init__(self):
@@ -21,7 +25,60 @@ class NoSQLService:
             self.dashboard_collection = None
             self.mongo_connected = False
 
+    # -----------------------------------------------------------
+    # Dashboard consolidado
+    # -----------------------------------------------------------
+    def atualizar_dashboard(self):
+        if not self.mongo_connected:
+            print("[MongoDB] atualizar_dashboard ignorado (sem conexão)")
+            return
+
+        total_clientes = Cliente.query.count()
+        total_produtos = Produto.query.count()
+        total_vendas   = Venda.query.count()
+
+        top_produto = (
+            db.session.query(
+                Venda.id_produto,
+                func.sum(Venda.quantidade).label('qtd')
+            )
+            .group_by(Venda.id_produto)
+            .order_by(func.sum(Venda.quantidade).desc())
+            .first()
+        )
+
+        prod_dict = None
+        if top_produto:
+            p = Produto.query.get(top_produto.id_produto)
+            if p:
+                prod_dict = {
+                    'id': p.id_produto,
+                    'nome': p.nome,
+                    'qtd_vendida': int(top_produto.qtd)
+                }
+
+        doc = {
+            '_id': 'dashboard',
+            'total_clientes': total_clientes,
+            'total_produtos': total_produtos,
+            'total_vendas': total_vendas,
+            'produto_mais_vendido': prod_dict,
+            'atualizado_em': datetime.utcnow()
+        }
+
+        self.dashboard_collection.replace_one(
+            {'_id': 'dashboard'}, doc, upsert=True
+        )
+
+    def obter_dashboard(self):
+        """Retorna o documento dashboard do MongoDB."""
+        if not self.mongo_connected:
+            return None
+        return self.dashboard_collection.find_one({'_id': 'dashboard'})
+
+    # -----------------------------------------------------------
     # CRUD genérico
+    # -----------------------------------------------------------
     def registrar_documento(self, collection_name, filtro, valores):
         if self.mongo_connected:
             collection = self.mongo_db[collection_name]

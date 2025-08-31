@@ -1,5 +1,5 @@
-from flask import Blueprint, request, jsonify # type: ignore
-from app.services.sql_service import ProdutoService
+from flask import Blueprint, request, jsonify
+from sql_service2 import ProdutoService
 
 bp = Blueprint('produtos', __name__)
 

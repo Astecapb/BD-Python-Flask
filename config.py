@@ -8,5 +8,5 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # MongoDB
     MONGO_URI = "mongodb://localhost:27017/"
-    MONGO_DB = "vendas"
+    MONGO_DB = "vendas_agregadas"
     MONGO_COLLECTION="clientes"

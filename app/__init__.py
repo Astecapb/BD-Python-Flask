@@ -21,10 +21,12 @@ def create_app():
     from app.routes.clientes import bp as clientes_bp
     from app.routes.produtos import bp as produtos_bp
     from app.routes.vendas import bp as vendas_bp
+    from app.routes.dashboard import bp as dashboard_bp
 
     app.register_blueprint(clientes_bp, url_prefix='/api')
     app.register_blueprint(produtos_bp, url_prefix='/api')
     app.register_blueprint(vendas_bp, url_prefix='/api')
+    app.register_blueprint(dashboard_bp, url_prefix='/api/dashboard')
 
 
     return app

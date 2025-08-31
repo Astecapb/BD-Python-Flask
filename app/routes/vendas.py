@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify # type: ignore
-from app.services.sql_service import VendaService
-from app.services.sql_service import ProdutoService  # para validar estoque
+from sql_service2 import VendaService
+from sql_service2 import ProdutoService  # para validar estoque
 from app import db
 
 bp = Blueprint('vendas', __name__)

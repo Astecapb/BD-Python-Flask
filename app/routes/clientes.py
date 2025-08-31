@@ -1,8 +1,10 @@
 from flask import Blueprint, request, jsonify # type: ignore
-from app.services.sql_service import ClienteService
+from sql_service2 import ClienteService
 
 bp = Blueprint('clientes', __name__)
 
+
+# ---- CRIAR CLIENTES ----
 @bp.route('/clientes', methods=['POST'])
 def criar_clientes():
     data = request.json
